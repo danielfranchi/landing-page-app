@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { motion, MotionProps } from "framer-motion";
 
 interface AnimatedWrapperProps {
@@ -6,10 +6,10 @@ interface AnimatedWrapperProps {
   animationProps: MotionProps;
 }
 
-const AnimatedWrapper: React.FC<AnimatedWrapperProps> = ({
+const AnimatedWrapper = ({
   children,
   animationProps,
-}) => {
+}: AnimatedWrapperProps) => {
   return <motion.div {...animationProps}>{children}</motion.div>;
 };
 

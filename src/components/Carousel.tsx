@@ -1,25 +1,23 @@
-import React, { useRef, useEffect } from "react";
+import { useRef } from "react";
+
+import Card from "./Card";
+
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import SwiperCore from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-import { Pagination } from "swiper/modules";
-import SwiperCore from "swiper";
+
 import Cameron from "../assets/cameron.png";
 import Ralph from "../assets/ralph.png";
 import Jane from "../assets/jane.png";
 import Thumb from "../assets/thumb.png";
-import Card from "./Card";
 import PrevIcon from "../assets/prevIcon.png";
 import NextIcon from "../assets/nextIcon.png";
 
-const Carousel: React.FC = () => {
+const Carousel = () => {
   const swiperRef = useRef<SwiperCore | null>(null);
-  useEffect(() => {
-    if (swiperRef.current) {
-      console.log("Swiper is initialized");
-    }
-  }, []);
 
   const cardsData = [
     {

@@ -1,5 +1,10 @@
-import HeadsetIcon from "../assets/headset.svg";
 import Button from "./Button";
+
+import HeadsetIcon from "../assets/headset.svg";
+
+import { linkVariants } from "../utils/animations";
+
+import AnimatedWrapper from "./AnimatedWrapper";
 
 import "../styles/index.css";
 
@@ -13,35 +18,31 @@ const Header = () => {
         >
           soller
         </span>
-
-        <nav className="hidden sm:flex gap-4 md:gap-6">
-          <a
-            href="#"
-            className="px-2 py-3 text-sm md:text-base font-medium text-black leading-6 tracking-[0.5px] text-left hover:opacity-80"
-          >
-            Products
-          </a>
-          <a
-            href="#"
-            className="px-2 py-3 text-sm md:text-base font-medium text-black leading-6 tracking-[0.5px] text-left hover:opacity-80"
-          >
-            Solutions
-          </a>
-          <a
-            href="#"
-            className="px-2 py-3 text-sm md:text-base font-medium text-black leading-6 tracking-[0.5px] text-left hover:opacity-80 z-20 sm:hidden"
-          >
-            Services
-          </a>
-          <a
-            href="#"
-            className="px-2 py-3 text-sm md:text-base font-medium text-black leading-6 tracking-[0.5px] text-left hover:opacity-80 z-20 sm:hidden"
-          >
-            Configure
-          </a>
+        <nav className="hidden sm:flex gap-4 md:gap-6 items-center">
+          {["Products", "Solutions", "Services", "Configure"].map(
+            (text, index) => (
+              <AnimatedWrapper
+                key={text}
+                animationProps={{
+                  initial: "hidden",
+                  animate: "visible",
+                  variants: linkVariants,
+                  transition: { delay: index * 0.3, duration: 1.2 },
+                }}
+              >
+                <a
+                  href="#"
+                  className={`px-2 py-3 text-sm md:text-base font-medium text-black leading-6 tracking-[0.5px] text-left hover:opacity-80 flex items-center ${
+                    index >= 2 ? "hidden lg:block" : ""
+                  }`}
+                >
+                  {text}
+                </a>
+              </AnimatedWrapper>
+            )
+          )}
         </nav>
       </div>
-
       <div className="flex items-center relative z-20">
         <div className="hidden lg:flex items-center">
           <img
@@ -54,7 +55,6 @@ const Header = () => {
             555 818 282
           </span>
         </div>
-
         <div className="hidden lg:block mr-10">
           <Button text="Request a Quote" color="royal-violet" />
         </div>

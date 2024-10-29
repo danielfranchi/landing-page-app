@@ -1,5 +1,3 @@
-import React from "react";
-
 interface CardProps {
   imageSrc: string;
   mainText: string;
@@ -7,12 +5,7 @@ interface CardProps {
   mileage: string;
 }
 
-const Card: React.FC<CardProps> = ({
-  imageSrc,
-  mainText,
-  personName,
-  mileage,
-}) => {
+const Card = ({ imageSrc, mainText, personName, mileage }: CardProps) => {
   return (
     <div className="w-[364px] h-[442px] p-[32px] gap-[16px] border rounded-lg bg-white">
       <div className="w-[300px] h-[202px] mb-[25px]">

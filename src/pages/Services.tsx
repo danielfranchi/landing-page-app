@@ -1,37 +1,36 @@
-import React from "react";
-import Mobile from "../assets/mobile.png";
-import BlobPurple from "../assets/blob-purple.png";
-import "../styles/index.css";
-import { titleAnimation, slideInRightAnimation } from "../utils/animations";
 import AnimatedWrapper from "../components/AnimatedWrapper";
 
-const Services: React.FC = () => {
+import Mobile from "../assets/mobile.png";
+import BlobPurple from "../assets/blob-purple.png";
+
+import { titleAnimation, slideInRightAnimation } from "../utils/animations";
+
+import "../styles/index.css";
+
+const Services = () => {
   return (
     <div className="relative grid grid-cols-1  gap-8 bg-white p-8 md:grid-cols-[1fr_1.5fr]">
       <div className="relative flex justify-center items-center order-last md:order-first">
         <img
           src={BlobPurple}
           alt="Blob Purple"
-          className="absolute top-0 left-0 w-full max-w-[600px] md:max-w-[550px] sm:max-w-[300px] h-auto cc"
+          className="absolute top-0 left-0 w-full max-w-[600px] md:max-w-[550px] sm:max-w-[300px] h-auto positioning-image-blob-purple"
         />
         <img
           src={Mobile}
           alt="Mobile Mockup"
-          className="relative z-10 w-full max-w-[300px] md:max-w-[500px] h-auto rounded-lg bb imagem-mobile"
+          className="relative z-10 w-full max-w-[300px] md:max-w-[500px] h-auto rounded-lg positioning-image-mobile imagem-mobile"
         />
       </div>
-
       <div className="flex flex-col justify-center order-first md:order-last">
         <AnimatedWrapper animationProps={titleAnimation}>
           <h2 className="text-[20px] font-medium leading-[22px] text-deep-orange">
             Services
           </h2>
-          {/* <h1 className="text-[32px] sm:text-[56px] font-extrabold leading-tight sm:leading-[61.6px] text-primary mt-4"> */}
           <h1 className="text-[32px] sm:text-[40px] md:text-[56px] font-extrabold text-primary leading-[36px] sm:leading-[50px] md:leading-[61.6px] mb-4">
             Personalized services
           </h1>
         </AnimatedWrapper>
-
         <AnimatedWrapper animationProps={slideInRightAnimation}>
           <p className="text-[14px] sm:text-[16px] md:text-[20px] font-normal leading-[24px] sm:leading-[28px] text-primary mt-4">
             Pretium lectus ultrices sit tempor, sit ullamcorper volutpat et et.
@@ -48,7 +47,7 @@ const Services: React.FC = () => {
               Feugiat sed maecenas eu accumsan tristique.
             </p>
           </div>
-          <div>
+          <div className="custom-width">
             <h3 className="text-[16px] sm:text-[20px] md:text-[24px] font-bold text-primary">
               Eget sit
             </h3>
@@ -57,7 +56,7 @@ const Services: React.FC = () => {
               Consequat turpis natoque leo, massa.
             </p>
           </div>
-          <div>
+          <div className="custom-width">
             <h3 className="text-[16px] sm:text-[20px] md:text-[24px] font-bold text-primary">
               Imperdiet pellentesque
             </h3>
@@ -66,7 +65,7 @@ const Services: React.FC = () => {
               viverra parturient tristique nulla.
             </p>
           </div>
-          <div>
+          <div className="custom-width">
             <h3 className="text-[16px] sm:text-[20px] md:text-[24px] font-bold text-primary">
               Non libero
             </h3>

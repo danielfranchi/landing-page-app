@@ -1,9 +1,8 @@
-import React from "react";
-import LandingImage from "../assets/landingImage.png";
-import ThumbImage from "../assets/thumb.png";
-import "../styles/index.css";
 import Button from "../components/Button";
 import AnimatedWrapper from "../components/AnimatedWrapper";
+
+import LandingImage from "../assets/landingImage.png";
+import ThumbImage from "../assets/thumb.png";
 
 import {
   titleAnimation,
@@ -13,7 +12,9 @@ import {
   combinedButtonAnimation,
 } from "../utils/animations";
 
-const Hero: React.FC = () => {
+import "../styles/index.css";
+
+const Hero = () => {
   return (
     <section className="flex flex-col md:flex-row items-center justify-between p-6">
       <div className="md:w-1/2 text-left px-8">
@@ -27,7 +28,6 @@ const Hero: React.FC = () => {
             </span>
           </h1>
         </AnimatedWrapper>
-
         <AnimatedWrapper animationProps={slideInLeftAnimation}>
           <p className="font-roboto text-xl font-normal leading-[38.4px] text-primary mt-4 font-p">
             <span className="block md:hidden span-center">
@@ -42,7 +42,6 @@ const Hero: React.FC = () => {
             </span>
           </p>
         </AnimatedWrapper>
-
         <div className="mt-6 mb-[6rem]">
           <div className="flex justify-center md:justify-start">
             <AnimatedWrapper animationProps={combinedButtonAnimation}>
@@ -50,7 +49,6 @@ const Hero: React.FC = () => {
             </AnimatedWrapper>
           </div>
         </div>
-
         <AnimatedWrapper animationProps={slideInLeftAnimation}>
           <p className="font-roboto text-base font-normal leading-[28.8px] text-primary text-left md:text-left md:text-xl md:leading-[38.4px] font-p">
             <span className="block md:hidden">
@@ -71,12 +69,10 @@ const Hero: React.FC = () => {
             </span>
           </p>
         </AnimatedWrapper>
-
         <div className="mt-8 flex items-center">
           <AnimatedWrapper animationProps={fadeInAnimation}>
             <img src={ThumbImage} alt="Thumbnail" className="w-12 h-12 mr-2" />
           </AnimatedWrapper>
-
           <div>
             <AnimatedWrapper animationProps={fadeInAnimation}>
               <p className="font-roboto text-lg font-normal leading-[20px] text-primary mt-2">
@@ -89,7 +85,6 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-
       <div className="md:w-1/2 mt-8 md:mt-0 flex justify-end absolute top-0 right-0">
         <AnimatedWrapper animationProps={slideInRightAnimation}>
           <img

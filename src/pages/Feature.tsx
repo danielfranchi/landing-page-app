@@ -1,19 +1,18 @@
-import React from "react";
+import AnimatedWrapper from "../components/AnimatedWrapper";
 
-import Desktop from "../assets/desktop.png";
 import CirclePurple from "../assets/circle-purple.png";
 import CircleOrange from "../assets/circle-orange.png";
-
-import "../styles/index.css";
+import Desktop from "../assets/desktop.png";
 
 import {
   titleAnimation,
   slideInRightAnimation,
   slideInLeftAnimation,
 } from "../utils/animations";
-import AnimatedWrapper from "../components/AnimatedWrapper";
 
-const Feature: React.FC = () => {
+import "../styles/index.css";
+
+const Feature = () => {
   return (
     <div className="relative w-full flex flex-col items-center justify-center bg-white overflow-hidden pt-36 margin-pages overflow-x-hidden">
       <div className="text-center mb-10">
@@ -25,7 +24,6 @@ const Feature: React.FC = () => {
             Pick the Sun
           </h1>
         </AnimatedWrapper>
-
         <AnimatedWrapper animationProps={slideInLeftAnimation}>
           <p className="text-primary text-base leading-[22px] w-[691px] mx-auto mb-6 lg:mb-24 text-center">
             <span className="block md:hidden">
@@ -49,7 +47,6 @@ const Feature: React.FC = () => {
           </p>
         </AnimatedWrapper>
       </div>
-
       <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-items-center w-full h-full sm:h-[250px] md:h-auto">
         <AnimatedWrapper animationProps={slideInLeftAnimation}>
           <img
@@ -58,13 +55,11 @@ const Feature: React.FC = () => {
             className="circle-orange circle-orange-size"
           />
         </AnimatedWrapper>
-
         <img
           src={Desktop}
           alt="Demo"
           className="w-full h-auto max-w-[1800px] max-h-[1000px] object-contain image-size z-20 image-position"
         />
-
         <AnimatedWrapper animationProps={slideInRightAnimation}>
           <img
             src={CirclePurple}
